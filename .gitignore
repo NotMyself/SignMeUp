@@ -1,0 +1,14 @@
+/src/*/*/obj
+/src/*/*/bin
+_ReSharper.*
+TestResult.xml
+*.csproj.user
+*.resharper.user
+*.resharper
+*.suo
+*.cache
+*~
+*.swp
+bin
+obj
+ci
