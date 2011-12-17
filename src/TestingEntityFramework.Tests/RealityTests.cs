@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using Shouldly;
 
 namespace TestingEntityFramework.Tests
 {
@@ -12,7 +9,7 @@ namespace TestingEntityFramework.Tests
         [Test]
         public void true_should_be_true()
         {
-            Assert.IsTrue(true);
+            true.ShouldBe(true);
         }
     }
 }

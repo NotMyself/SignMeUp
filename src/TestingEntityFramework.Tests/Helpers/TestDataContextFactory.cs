@@ -3,17 +3,10 @@ using System.Data.Common;
 using System.Data.Entity.Migrations;
 using TestingEntityFramework.Core.Extensions;
 using TestingEntityFramework.Data;
+using TestingEntityFramework.Data.Migrations;
 
 namespace TestingEntityFramework.Tests.Helpers
 {
-    public class TestConfiguration : DbMigrationsConfiguration<DataContext>
-    {
-        public TestConfiguration()
-        {
-            AutomaticMigrationsEnabled = true;
-        }   
-    }
-
     public class TestDataContextFactory
     {
         private const string ConnectionString = "Data Source={0}.sdf";
@@ -36,10 +29,11 @@ namespace TestingEntityFramework.Tests.Helpers
 
         private static void StandUpTestDatabase(string databaseName)
         {
-            var config = new TestConfiguration
+            var config = new Configuration
                              {
                                  ConnectionString = ConnectionString.FormatWith(databaseName),
-                                 ConnectionProviderName = ProviderName
+                                 ConnectionProviderName = ProviderName, 
+                                 AutomaticMigrationsEnabled = true
                              };
 
             new DbMigrator(config).Update();

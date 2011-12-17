@@ -1,16 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Nancy;
+﻿using Nancy;
+using Nancy.ModelBinding;
+using TestingEntityFramework.Core;
 
 namespace TestingEntityFramework.Web.Modules
 {
     public class RootModule : NancyModule
     {
-        public RootModule()
+        public RootModule(IUserRepository userRepository)
         {
             Get["/"] = x => View["index"];
+            Post["/"] = x =>
+                                  {
+                                      var user = this.Bind<User>();
+                                      userRepository.Save(user);
+
+                                      return View["thankyou", user];
+                                  };
         }
     }
 }

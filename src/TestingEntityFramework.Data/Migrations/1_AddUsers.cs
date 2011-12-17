@@ -15,5 +15,10 @@ namespace TestingEntityFramework.Data.Migrations
             })
                 .PrimaryKey(t => t.Id);
         }
+
+        public override void Down()
+        {
+                DropTable("Users");
+        }
     }
 }
