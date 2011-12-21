@@ -86,17 +86,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestingEntityFramework.Core\TestingEntityFramework.Core.csproj">
+    <ProjectReference Include="..\SignMeUp.Core\SignMeUp.Core.csproj">
       <Project>{8556CBB5-F4F4-46EA-90E0-A5C6F7205612}</Project>
-      <Name>TestingEntityFramework.Core</Name>
+      <Name>SignMeUp.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestingEntityFramework.Data\TestingEntityFramework.Data.csproj">
+    <ProjectReference Include="..\SignMeUp.Data\SignMeUp.Data.csproj">
       <Project>{8F431E12-164A-49EF-A4C9-90424E00066B}</Project>
-      <Name>TestingEntityFramework.Data</Name>
+      <Name>SignMeUp.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestingEntityFramework.Web\TestingEntityFramework.Web.csproj">
+    <ProjectReference Include="..\SignMeUp.Web\SignMeUp.Web.csproj">
       <Project>{B6D15C80-ADD9-4194-9466-8B126BAE1905}</Project>
-      <Name>TestingEntityFramework.Web</Name>
+      <Name>SignMeUp.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -58,13 +58,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestingEntityFramework.Core\TestingEntityFramework.Core.csproj">
-      <Project>{8556CBB5-F4F4-46EA-90E0-A5C6F7205612}</Project>
-      <Name>TestingEntityFramework.Core</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\SignMeUp.Core\SignMeUp.Core.csproj">
+      <Project>{8556CBB5-F4F4-46EA-90E0-A5C6F7205612}</Project>
+      <Name>SignMeUp.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

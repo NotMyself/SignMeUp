@@ -80,16 +80,15 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestingEntityFramework.Core\TestingEntityFramework.Core.csproj">
+    <ProjectReference Include="..\SignMeUp.Core\SignMeUp.Core.csproj">
       <Project>{8556CBB5-F4F4-46EA-90E0-A5C6F7205612}</Project>
-      <Name>TestingEntityFramework.Core</Name>
+      <Name>SignMeUp.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestingEntityFramework.Data\TestingEntityFramework.Data.csproj">
+    <ProjectReference Include="..\SignMeUp.Data\SignMeUp.Data.csproj">
       <Project>{8F431E12-164A-49EF-A4C9-90424E00066B}</Project>
-      <Name>TestingEntityFramework.Data</Name>
+      <Name>SignMeUp.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Views\index.cshtml" />
   </ItemGroup>
