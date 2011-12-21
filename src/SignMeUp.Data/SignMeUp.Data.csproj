@@ -8,8 +8,8 @@
     <ProjectGuid>{8F431E12-164A-49EF-A4C9-90424E00066B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestingEntityFramework.Data</RootNamespace>
-    <AssemblyName>TestingEntityFramework.Data</AssemblyName>
+    <RootNamespace>SignMeUp.Data</RootNamespace>
+    <AssemblyName>SignMeUp.Data</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

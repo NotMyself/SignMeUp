@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace TestingEntityFramework.Core.Extensions
+﻿namespace SignMeUp.Core.Extensions
 {
     public static class StringExtensions
     {

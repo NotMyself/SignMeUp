@@ -1,8 +1,8 @@
 ﻿using Nancy;
 using Nancy.ModelBinding;
-using TestingEntityFramework.Core;
+using SignMeUp.Core;
 
-namespace TestingEntityFramework.Web.Modules
+namespace SignMeUp.Web.Modules
 {
     public class RootModule : NancyModule
     {

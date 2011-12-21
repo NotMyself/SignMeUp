@@ -4,11 +4,11 @@ using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.Testing;
 using Shouldly;
-using TestingEntityFramework.Core;
-using TestingEntityFramework.Core.Services;
-using TestingEntityFramework.Web.Modules;
+using SignMeUp.Core;
+using SignMeUp.Core.Services;
+using SignMeUp.Web.Modules;
 
-namespace TestingEntityFramework.Tests
+namespace SignMeUp.Tests
 {
     [TestFixture]
     public class RootModuleTests

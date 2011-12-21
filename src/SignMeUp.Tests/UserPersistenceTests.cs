@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
-using TestingEntityFramework.Core;
-using TestingEntityFramework.Data;
-using TestingEntityFramework.Tests.Helpers;
+using SignMeUp.Core;
+using SignMeUp.Data;
+using SignMeUp.Tests.Helpers;
 
-namespace TestingEntityFramework.Tests
+namespace SignMeUp.Tests
 {
     [TestFixture]
     public class UserPersistenceTests

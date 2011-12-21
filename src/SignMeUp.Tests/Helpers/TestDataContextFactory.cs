@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Data.Common;
 using System.Data.Entity.Migrations;
-using TestingEntityFramework.Core.Extensions;
-using TestingEntityFramework.Data;
-using TestingEntityFramework.Data.Migrations;
+using SignMeUp.Core.Extensions;
+using SignMeUp.Data;
+using SignMeUp.Data.Migrations;
 
-namespace TestingEntityFramework.Tests.Helpers
+namespace SignMeUp.Tests.Helpers
 {
     public class TestDataContextFactory
     {

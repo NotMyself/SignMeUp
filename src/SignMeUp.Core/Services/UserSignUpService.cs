@@ -1,4 +1,4 @@
-﻿namespace TestingEntityFramework.Core.Services
+﻿namespace SignMeUp.Core.Services
 {
     public class UserSignUpService
     {

@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Shouldly;
 
-namespace TestingEntityFramework.Tests
+namespace SignMeUp.Tests
 {
     [TestFixture]
     public class RealityTests

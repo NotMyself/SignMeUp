@@ -1,6 +1,6 @@
 using System.Data.Entity.Migrations;
 
-namespace TestingEntityFramework.Data.Migrations
+namespace SignMeUp.Data.Migrations
 {
     public class Configuration : DbMigrationsConfiguration<DataContext>
     {

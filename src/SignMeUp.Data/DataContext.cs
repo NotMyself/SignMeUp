@@ -1,8 +1,8 @@
 ﻿using System.Data.Common;
 using System.Data.Entity;
-using TestingEntityFramework.Core;
+using SignMeUp.Core;
 
-namespace TestingEntityFramework.Data
+namespace SignMeUp.Data
 {
     public class DataContext : DbContext
     {

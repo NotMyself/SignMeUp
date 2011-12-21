@@ -1,4 +1,4 @@
-﻿namespace TestingEntityFramework.Core
+﻿namespace SignMeUp.Core
 {
     public class User
     {
