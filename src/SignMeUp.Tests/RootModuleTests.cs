@@ -13,17 +13,19 @@ namespace SignMeUp.Tests
     [TestFixture]
     public class RootModuleTests
     {
-        private INancyBootstrapper bootStrapper;
+        
         private IUserRepository userRepository;
+        private IEmailService emailService; 
         private Browser browser;
+
 
         [SetUp]
         public void SetUp()
         {
-            bootStrapper = new ConfigurableBootstrapper(with =>
+          var bootStrapper = new ConfigurableBootstrapper(with =>
                                 {
                                     with.Dependency<IUserRepository>(userRepository = Substitute.For<IUserRepository>());
-                                    with.Dependency<UserSignUpService>(new UserSignUpService(userRepository));
+                                    with.Dependency<IEmailService>(emailService = Substitute.For<IEmailService>());
                                     with.Module<RootModule>();
                                 });
             browser = new Browser(bootStrapper);

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="IEmailService.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="Services\UserSignUpService.cs" />
     <Compile Include="User.cs" />

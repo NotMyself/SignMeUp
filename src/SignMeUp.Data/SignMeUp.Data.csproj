@@ -56,6 +56,7 @@
     <Compile Include="Migrations\1_AddUsers.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
