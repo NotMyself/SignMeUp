@@ -10,7 +10,7 @@ namespace SignMeUp.Web.Modules
         public RootModule(UserSignUpService userSignUp)
         {
             Get["/"] = x => View["index"];
-            Post["/foo"] = x =>
+            Post["/"] = x =>
                                   {
                                       var user = this.Bind<User>();
                                       

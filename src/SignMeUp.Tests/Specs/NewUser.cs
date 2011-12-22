@@ -35,7 +35,7 @@ namespace SignMeUp.Tests.Specs
 
         public override void When()
         {
-            response = subject.Post("/foo/", with =>
+            response = subject.Post("/", with =>
                         {
                             with.FormValue("FirstName", user.FirstName);
                             with.FormValue("LastName", user.LastName);
@@ -52,6 +52,7 @@ namespace SignMeUp.Tests.Specs
         [Test]
         public void it_should_thank_the_user()
         {
+            response.Body.ShouldNotBeEmpty();
             response.Body["body"].ShouldContain("Thank you, {0}".FormatWith(user.FirstName));
         }
 
