@@ -12,6 +12,43 @@ using SignMeUp.Web.Modules;
 
 namespace SignMeUp.Tests.Specs
 {
+
+    [TestFixture]
+    public class when_visiting_the_root_of_the_site : with_a_browser
+    {
+        private BrowserResponse response;
+
+        public override void Given()
+        {
+            Configure(with =>
+            {
+                with.Module<RootModule>();
+                with.Dependency<IEmailService>(Substitute.For<IEmailService>());
+                with.Dependency<DataContext>(TestDataContextFactory.Build());
+            });
+
+            base.Given();
+        }
+        
+        public override void When()
+        {
+            response = subject.Get("/");
+        }
+
+        [Test]
+        public void it_should_be_successful()
+        {
+            response.StatusCode.ShouldBe(HttpStatusCode.OK);
+        }
+
+        [Test]
+        public void it_should_show_the_signup_form()
+        {
+            response.Body["form"].ShouldExistOnce()
+                    .And.Attribute["action"].ShouldBe("/");
+        }
+    }
+
     [TestFixture]
     public class when_signing_up_as_a_new_user : with_a_browser
     {
@@ -37,6 +74,7 @@ namespace SignMeUp.Tests.Specs
         {
             response = subject.Post("/", with =>
                         {
+                            with.HttpRequest();
                             with.FormValue("FirstName", user.FirstName);
                             with.FormValue("LastName", user.LastName);
                             with.FormValue("Email", user.Email);
