@@ -53,20 +53,11 @@ namespace SignMeUp.Tests.Specs
     public class when_signing_up_as_a_new_user : with_a_browser
     {
         private User user;
-        private BrowserResponse response;
-        private DataContext dataContext;
-        private IEmailService emailService;
 
         public override void Given()
         {
             user = new User { FirstName = "Dirk", LastName = "Diggler", Email = "dirk@diggler.com" };
-            
-            Configure(with =>
-                          {
-                              with.Module<RootModule>();
-                              with.Dependency<IEmailService>(emailService = Substitute.For<IEmailService>());
-                              with.Dependency<DataContext>(dataContext = TestDataContextFactory.Build());
-                          });
+            Configure(with => with.Module<RootModule>());
             base.Given();
         }
 
@@ -101,6 +92,57 @@ namespace SignMeUp.Tests.Specs
 
         [Test]
         public void it_should_send_the_user_a_validation_email()
+        {
+            emailService.Received().SendActivationEmail(Arg.Is<User>(arg => arg.Email == user.Email));
+        }
+    }
+
+    [TestFixture]
+    public class when_signing_up_as_an_existing_user : with_a_browser
+    {
+        private User user;
+
+        public override void Given()
+        {
+            user = new User { FirstName = "Dirk", LastName = "Diggler", Email = "dirk@diggler.com" };
+            Configure(with => with.Module<RootModule>());
+            base.Given();
+            dataContext.Users.Add(user);
+            dataContext.SaveChanges();
+            
+        }
+
+        public override void When()
+        {
+            response = subject.Post("/", with =>
+            {
+                with.HttpRequest();
+                with.FormValue("FirstName", user.FirstName);
+                with.FormValue("LastName", user.LastName);
+                with.FormValue("Email", user.Email);
+            });
+        }
+
+        [Test]
+        public void it_should_be_successful()
+        {
+            response.StatusCode.ShouldBe(HttpStatusCode.OK);
+        }
+
+        [Test]
+        public void it_should_thank_the_user()
+        {
+            response.Body["body"].ShouldContain("Thank you, {0}".FormatWith(user.FirstName));
+        }
+
+        [Test]
+        public void it_should_not_save_the_user()
+        {
+            dataContext.Users.Count(x => x.Email.Equals(user.Email)).ShouldBe(1);
+        }
+
+        [Test]
+        public void it_should_resend_the_user_a_validation_email()
         {
             emailService.Received().SendActivationEmail(Arg.Is<User>(arg => arg.Email == user.Email));
         }

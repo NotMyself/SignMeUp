@@ -1,4 +1,5 @@
-﻿using SignMeUp.Core;
+﻿using System.Linq;
+using SignMeUp.Core;
 
 namespace SignMeUp.Data
 {
@@ -15,6 +16,11 @@ namespace SignMeUp.Data
         {
             context.Users.Add(user);
             context.SaveChanges();
+        }
+
+        public bool UserExists(User user)
+        {
+            return context.Users.Any(x => x.Email.Equals(user.Email));
         }
     }
 }

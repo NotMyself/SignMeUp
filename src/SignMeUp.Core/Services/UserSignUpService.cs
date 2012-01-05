@@ -13,7 +13,8 @@
 
         public void SignUp(User user)
         {
-            userRepository.Save(user);
+            if(!userRepository.UserExists(user))
+                userRepository.Save(user);
             emailService.SendActivationEmail(user);
         }
     }
